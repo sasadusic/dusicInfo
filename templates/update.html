@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block context %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-1 my-2">Update Post</h1>
+            <!-- Big card -->
+            <div class="card mb-3">
+              <h3 class="card-header">Enter new information</h3>
+                <div class="card-body">
+                    <!-- New post form -->
+                    <form action="" method="post">
+                        <input type="hidden" id="id" name="id" value="{{ post.id }}">     
+                        <div class="form-group mb-3">
+                          <label for="title">Enter title</label>
+                          <input type="text" id="title" name="title" placehonder="Enter your title" class="form-control" value="{{ post.title }}">     
+                        </div>
+                        <div class="form-group mb-3">
+                          <label for="password">Post text</label>
+                          <textarea type="text" id="text" name="text" placehonder="Enter text" class="form-control" value="{{ post.content }}">{{ post.content }}</textarea>     
+                        </div>
+                        <!-- category -->
+                        <select name="category" id="category">
+                            {% for cat in categories %}
+                            <option value="{{ cat.name }}">{{ cat.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <!-- category -->
+                         <!-- Submit button -->
+                         <div class="d-grid gap-2">
+                          <button class="btn btn-primary mt-3" type="submit">Update Post</button>
+                        </div>
+                      <!-- Submit button -->
+                      </form>
+                    <!-- New post form -->
+                </div>
+                <div class="card-footer text-muted">
+                  2 days ago
+                </div>
+              </div>
+              <!-- Big card -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+

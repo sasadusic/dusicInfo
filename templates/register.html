@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block context %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-1 my-2">Sign up</h1>
+            <!-- Card -->
+            <div class="card mb-3">
+              <h3 class="card-header">Enter your information</h3>
+                <div class="card-body">
+                  <!-- Sign up form -->
+                  <form action="" method="post">
+                    <!-- User name input group -->
+                    <div class="form-group mb-3">
+                      <label for="username">User name</label>
+                      <input type="text" id="username" name="username" placehonder="Enter your first name" class="form-control">     
+                    </div>
+                    <!-- User name input group -->
+                    <!-- Email input group -->
+                    <div class="form-group mb-3">
+                      <label for="email">Email address</label>
+                      <input type="email" id="email" name="email" placehonder="Enter your email" class="form-control">     
+                    </div>
+                    <!-- Email input group -->
+                    <!-- Password input group -->
+                    <div class="form-group mb-3">
+                      <label for="password">Password</label>
+                      <input type="text" id="password" name="password" placehonder="Enter password" class="form-control">     
+                    </div>
+                    <!-- Password input group -->
+                    <!-- Password2 input group -->
+                    <div class="form-group mb-3">
+                      <label for="password2">Confirm Password</label>
+                      <input type="text" id="password2" name="password2" placehonder="Enter password again" class="form-control">     
+                    </div>
+                    <!-- Password2 input group -->
+                     <!-- Submit button -->
+                     <div class="d-grid gap-2">
+                      <button class="btn btn-secondary mt-3" type="submit">Register</button>
+                    </div>
+                  <!-- Submit button -->
+                  </form>
+                      <!-- Sign up form -->
+                </div>
+                <div class="card-footer text-muted">
+                  2 days ago
+                </div>
+              </div>
+              <!-- Card -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+

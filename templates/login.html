@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block context %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-1 my-2">login</h1>
+            <!-- Big card -->
+            <div class="card mb-3">
+              <h3 class="card-header">Enter your information</h3>
+                <div class="card-body">
+                    <!-- Login form -->
+                    <form action="" method="post">
+                        <div class="form-group mb-3">
+                          <label for="username">Enter username</label>
+                          <input type="text" id="username" name="username" placehonder="Enter your username" class="form-control">     
+                        </div>
+                        <div class="form-group mb-3">
+                          <label for="password">Password</label>
+                          <input type="text" id="password" name="password" placehonder="Enter password" class="form-control">     
+                        </div>
+                         <!-- Submit button -->
+                         <div class="d-grid gap-2">
+                          <button class="btn btn-primary mt-3" type="submit">login</button>
+                        </div>
+                      <!-- Submit button -->
+                      </form>
+                    <!-- Login form -->
+                </div>
+                <div class="card-footer text-muted">
+                  2 days ago
+                </div>
+              </div>
+              <!-- Big card -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+

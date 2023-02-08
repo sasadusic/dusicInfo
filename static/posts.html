@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block nav %}
+    {% include 'nav.html' %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="rov">
+        <div class="col">
+            <h1 class="display-1 my-5 text-success">All Posts by  {{ username|capitalize }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <!-- List of all posts -->
+        {% if posts %}
+        {% for post in posts %}
+        <div class="col-md-6 col-lg-4">
+         <a href="#" style=" color: inherit;
+         text-decoration: inherit;">
+           <!-- Card -->
+           <div class="card bg-light mb-4" style="min-height: 250px">
+           <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center"><a class="me-auto" href="/posts/{{post.user.username}}" style=" color: inherit;
+            text-decoration: inherit;">by {{ post.user.username|capitalize }} {{ post.id }} {{ post.user.id }}</a>
+            <!-- User options -->
+            {% if user.id == post.author %}
+            <div class="btn-group ms-auto">
+              <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
+              <ul class="dropdown-menu">
+                <li><a href="/delete-post/{{post.id}}" class="dropdown-item">Delete Post</a></li>
+                <li><a href="#" class="dropdown-item">Edit Post</a></li>
+              </ul>
+            </div>  
+            {% endif %}
+            <!-- User options -->
+          </div>
+           <div class="card-body">
+             <h4 class="card-title text-primary">{{ post.title }}</h4>
+             <p class="card-text">{{ post.text | truncate(250) }}</p>
+           </div>
+           <div class="card-footer text-muted">
+            Created {{ post.created_at }}
+           </div>
+         </div>
+         <!-- Card -->
+       </a>
+       </div>
+       {% endfor %}
+       {% else %}
+       <div class="col-md-6 col-lg-4">
+         <h2 class="display-2">No Posts Yet</h2>
+         <a class="display-4" href="#">Create One</a>
+       </div>
+       {% endif %}
+        <!-- List of all posts -->
+   </div>
+</div>
+{% endblock %}
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
